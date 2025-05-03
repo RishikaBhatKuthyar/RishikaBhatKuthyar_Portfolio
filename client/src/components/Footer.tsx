@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import SocialLinks from "@/components/SocialLinks";
 
 const Footer = () => {
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <a href="#" className="text-3xl font-bold text-primary-500">JD</a>
+              <Link href="/" className="text-3xl font-bold text-primary-500">JD</Link>
               <p className="text-gray-400 mt-2 text-center md:text-left">Software Engineer & Web Developer</p>
             </div>
             
@@ -40,11 +41,13 @@ const Footer = () => {
             
             <nav>
               <ul className="flex flex-wrap justify-center gap-6">
-                <li><a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                <li><a href="#projects" className="text-gray-400 hover:text-white transition-colors">Projects</a></li>
-                <li><a href="#skills" className="text-gray-400 hover:text-white transition-colors">Skills</a></li>
-                <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a></li>
-                <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                <li><Link href="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
+                <li><Link href="/projects" className="text-gray-400 hover:text-white transition-colors">Projects</Link></li>
+                <li><Link href="/skills" className="text-gray-400 hover:text-white transition-colors">Skills</Link></li>
+                <li><Link href="/experience" className="text-gray-400 hover:text-white transition-colors">Experience</Link></li>
+                <li><Link href="/resume" className="text-gray-400 hover:text-white transition-colors">Resume</Link></li>
+                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </nav>
           </div>

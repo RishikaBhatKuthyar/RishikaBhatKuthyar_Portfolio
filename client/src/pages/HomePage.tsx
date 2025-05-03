@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ReviewsSection from "@/components/ReviewsSection";
+// Import ReviewsSection
+import ReviewsSection from "../components/ReviewsSection";
 
 const HomePage = () => {
   return (

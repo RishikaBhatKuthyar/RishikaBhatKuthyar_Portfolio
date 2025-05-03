@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useLocation } from "wouter";
 import { useTheme } from "@/hooks/use-theme";
 import ThemeToggle from "@/components/ThemeToggle";
 import MobileMenu from "@/components/MobileMenu";
@@ -7,6 +8,7 @@ import { cn } from "@/lib/utils";
 const Header = () => {
   const { isDarkMode } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -16,41 +18,100 @@ const Header = () => {
     setMobileMenuOpen(false);
   };
 
+  // Check if the current route matches the link
+  const isActiveRoute = (route: string) => {
+    if (route === '/' && location === '/') return true;
+    if (route !== '/' && location.startsWith(route)) return true;
+    return false;
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-50 transition-colors duration-300">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-2xl font-bold text-primary-700 dark:text-primary-400">
+          <Link href="/" className="text-2xl font-bold text-primary-700 dark:text-primary-400">
             JD
-          </a>
+          </Link>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-8">
               <li>
-                <a href="#home" className="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                <Link 
+                  href="/" 
+                  className={cn(
+                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
+                    isActiveRoute("/") && "text-primary-600 dark:text-primary-400"
+                  )}
+                >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#projects" className="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                <Link 
+                  href="/projects" 
+                  className={cn(
+                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
+                    isActiveRoute("/projects") && "text-primary-600 dark:text-primary-400"
+                  )}
+                >
                   Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#skills" className="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                <Link 
+                  href="/skills" 
+                  className={cn(
+                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
+                    isActiveRoute("/skills") && "text-primary-600 dark:text-primary-400"
+                  )}
+                >
                   Skills
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
-                  About
-                </a>
+                <Link 
+                  href="/experience" 
+                  className={cn(
+                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
+                    isActiveRoute("/experience") && "text-primary-600 dark:text-primary-400"
+                  )}
+                >
+                  Experience
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors">
+                <Link 
+                  href="/resume" 
+                  className={cn(
+                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
+                    isActiveRoute("/resume") && "text-primary-600 dark:text-primary-400"
+                  )}
+                >
+                  Resume
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/blog" 
+                  className={cn(
+                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
+                    isActiveRoute("/blog") && "text-primary-600 dark:text-primary-400"
+                  )}
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/contact" 
+                  className={cn(
+                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
+                    isActiveRoute("/contact") && "text-primary-600 dark:text-primary-400"
+                  )}
+                >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import SocialLinks from "@/components/SocialLinks";
 
 const HeroSection = () => {
@@ -21,22 +22,24 @@ const HeroSection = () => {
             Software Engineer passionate about building modern web applications with TypeScript and React
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <motion.a 
-              href="#projects" 
-              className="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View My Work
-            </motion.a>
-            <motion.a 
-              href="#contact" 
-              className="px-6 py-3 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 font-medium rounded-lg border border-primary-600 dark:border-primary-400 transition-colors duration-300 shadow-md hover:shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Contact Me
-            </motion.a>
+            <Link href="/projects">
+              <motion.a 
+                className="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                View My Work
+              </motion.a>
+            </Link>
+            <Link href="/contact">
+              <motion.a 
+                className="px-6 py-3 bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 text-primary-600 dark:text-primary-400 font-medium rounded-lg border border-primary-600 dark:border-primary-400 transition-colors duration-300 shadow-md hover:shadow-lg cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact Me
+              </motion.a>
+            </Link>
           </div>
           <div className="mt-12">
             <SocialLinks />
