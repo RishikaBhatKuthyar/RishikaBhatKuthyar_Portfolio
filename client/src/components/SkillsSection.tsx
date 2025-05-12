@@ -196,17 +196,17 @@ const SkillsSection = () => {
             
             <TabsContent value="backend">
               <motion.div
-                className="bg-beige-50 dark:bg-gray-900/80 p-6 rounded-xl shadow-md border border-beige-200 dark:border-beige-800/30"
+                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-beige-800 dark:text-beige-100 flex items-center">
-                    <i className="ri-server-line mr-2 text-beige-600 dark:text-beige-400"></i> Backend Technologies
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 flex items-center">
+                    <i className="ri-server-line mr-2 text-green-600 dark:text-green-400"></i> Backend Technologies
                   </h3>
-                  <span className="px-3 py-1 bg-beige-200 text-beige-800 dark:bg-beige-800/30 dark:text-beige-200 text-xs font-medium rounded-full">
+                  <span className="px-3 py-1 bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 text-xs font-medium rounded-full">
                     {backendSkills.length} Skills
                   </span>
                 </div>
@@ -222,9 +222,9 @@ const SkillsSection = () => {
                   ))}
                 </div>
                 
-                <div className="mt-6 p-4 bg-beige-100 dark:bg-beige-900/20 rounded-lg">
-                  <h4 className="font-semibold text-beige-800 dark:text-beige-200 mb-2">Backend Expertise</h4>
-                  <p className="text-beige-700 dark:text-beige-300">
+                <div className="mt-6 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-100 mb-2">Backend Expertise</h4>
+                  <p className="text-gray-700 dark:text-gray-300">
                     I build robust and scalable backend services with a focus on API design, database optimization, and security. 
                     My experience includes developing RESTful APIs, managing databases, and implementing server-side logic.
                   </p>
@@ -234,17 +234,17 @@ const SkillsSection = () => {
             
             <TabsContent value="tools">
               <motion.div
-                className="bg-beige-50 dark:bg-gray-900/80 p-6 rounded-xl shadow-md border border-beige-200 dark:border-beige-800/30"
+                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-beige-800 dark:text-beige-100 flex items-center">
-                    <i className="ri-tools-line mr-2 text-beige-600 dark:text-beige-400"></i> Tools & Other Skills
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 flex items-center">
+                    <i className="ri-tools-line mr-2 text-purple-600 dark:text-purple-400"></i> Tools & Other Skills
                   </h3>
-                  <span className="px-3 py-1 bg-beige-200 text-beige-800 dark:bg-beige-800/30 dark:text-beige-200 text-xs font-medium rounded-full">
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 text-xs font-medium rounded-full">
                     {otherSkills.length} Skills
                   </span>
                 </div>
@@ -261,9 +261,9 @@ const SkillsSection = () => {
                   ))}
                 </div>
                 
-                <div className="mt-6 p-4 bg-beige-100 dark:bg-beige-900/20 rounded-lg">
-                  <h4 className="font-semibold text-beige-800 dark:text-beige-200 mb-2">Additional Expertise</h4>
-                  <p className="text-beige-700 dark:text-beige-300">
+                <div className="mt-6 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-100 mb-2">Additional Expertise</h4>
+                  <p className="text-gray-700 dark:text-gray-300">
                     Beyond core development, I'm experienced with a variety of tools and practices that enhance the development process. 
                     This includes version control, CI/CD, cloud services, testing methodologies, and development best practices.
                   </p>
