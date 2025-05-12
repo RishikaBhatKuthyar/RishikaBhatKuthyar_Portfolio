@@ -68,81 +68,90 @@ const SkillsSection = () => {
             
             <TabsContent value="all">
               <motion.div 
-                className="bg-beige-50 dark:bg-gray-900/80 p-8 rounded-xl shadow-md border border-beige-200 dark:border-beige-800/30"
+                className="grid grid-cols-1 md:grid-cols-2 gap-8"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
               >
+                <motion.div 
+                  className="bg-beige-50 dark:bg-gray-900/80 p-6 rounded-xl shadow-md border border-beige-200 dark:border-beige-800/30"
+                  variants={itemVariants}
+                >
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-xl font-bold text-beige-800 dark:text-beige-100 flex items-center">
+                      <i className="ri-code-s-slash-line mr-2 text-beige-600 dark:text-beige-400"></i> Frontend
+                    </h3>
+                    <span className="px-3 py-1 bg-beige-200 text-beige-800 dark:bg-beige-800/30 dark:text-beige-200 text-xs font-medium rounded-full">
+                      {frontendSkills.length} Skills
+                    </span>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    {frontendSkills.map((skill, index) => (
+                      <SkillBar 
+                        key={index}
+                        name={skill.name}
+                        percentage={skill.percentage}
+                        delay={index * 0.1}
+                      />
+                    ))}
+                  </div>
+                </motion.div>
+                
+                <motion.div 
+                  className="bg-beige-50 dark:bg-gray-900/80 p-6 rounded-xl shadow-md border border-beige-200 dark:border-beige-800/30"
+                  variants={itemVariants}
+                >
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-xl font-bold text-beige-800 dark:text-beige-100 flex items-center">
+                      <i className="ri-server-line mr-2 text-beige-600 dark:text-beige-400"></i> Backend
+                    </h3>
+                    <span className="px-3 py-1 bg-beige-200 text-beige-800 dark:bg-beige-800/30 dark:text-beige-200 text-xs font-medium rounded-full">
+                      {backendSkills.length} Skills
+                    </span>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    {backendSkills.map((skill, index) => (
+                      <SkillBar 
+                        key={index}
+                        name={skill.name}
+                        percentage={skill.percentage}
+                        delay={index * 0.1}
+                      />
+                    ))}
+                  </div>
+                </motion.div>
+              </motion.div>
+              
+              {/* Other Skills */}
+              <motion.div 
+                className="mt-8 bg-beige-50 dark:bg-gray-900/80 p-6 rounded-xl shadow-md border border-beige-200 dark:border-beige-800/30"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold text-beige-800 dark:text-beige-100 flex items-center">
-                    <i className="ri-tools-fill mr-2 text-beige-600 dark:text-beige-400"></i> Tools & Technologies
+                    <i className="ri-tools-line mr-2 text-beige-600 dark:text-beige-400"></i> Tools & Other Skills
                   </h3>
                   <span className="px-3 py-1 bg-beige-200 text-beige-800 dark:bg-beige-800/30 dark:text-beige-200 text-xs font-medium rounded-full">
-                    {frontendSkills.length + backendSkills.length + otherSkills.length} Skills
+                    {otherSkills.length} Skills
                   </span>
                 </div>
                 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                  {/* Frontend Skills */}
-                  {frontendSkills.map((skill, index) => (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                  {otherSkills.map((skill, index) => (
                     <SkillBar 
-                      key={`frontend-${index}`}
+                      key={index}
                       name={skill.name}
-                      percentage={skill.percentage}
+                      percentage={75}
+                      icon={skill.icon}
                       delay={index * 0.05}
                     />
                   ))}
-                  
-                  {/* Backend Skills */}
-                  {backendSkills.map((skill, index) => (
-                    <SkillBar 
-                      key={`backend-${index}`}
-                      name={skill.name}
-                      percentage={skill.percentage}
-                      delay={(frontendSkills.length + index) * 0.05}
-                    />
-                  ))}
-                  
-                  {/* Other Skills/Tools */}
-                  {otherSkills.map((skill, index) => (
-                    <SkillBar 
-                      key={`other-${index}`}
-                      name={skill.name}
-                      percentage={75} // Default mid-level for tools
-                      icon={skill.icon}
-                      delay={(frontendSkills.length + backendSkills.length + index) * 0.05}
-                    />
-                  ))}
-                </div>
-                
-                <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-4 bg-beige-100 dark:bg-beige-900/20 rounded-lg">
-                    <h4 className="font-semibold text-beige-800 dark:text-beige-200 mb-2 flex items-center">
-                      <i className="ri-code-s-slash-line mr-2"></i> Frontend
-                    </h4>
-                    <p className="text-beige-700 dark:text-beige-300 text-sm">
-                      Creating responsive, accessible, and performant user interfaces with modern frontend technologies to deliver intuitive user experiences.
-                    </p>
-                  </div>
-                  
-                  <div className="p-4 bg-beige-100 dark:bg-beige-900/20 rounded-lg">
-                    <h4 className="font-semibold text-beige-800 dark:text-beige-200 mb-2 flex items-center">
-                      <i className="ri-server-line mr-2"></i> Backend
-                    </h4>
-                    <p className="text-beige-700 dark:text-beige-300 text-sm">
-                      Building robust APIs, efficient database solutions, and scalable server architectures to power modern web applications.
-                    </p>
-                  </div>
-                  
-                  <div className="p-4 bg-beige-100 dark:bg-beige-900/20 rounded-lg">
-                    <h4 className="font-semibold text-beige-800 dark:text-beige-200 mb-2 flex items-center">
-                      <i className="ri-tools-line mr-2"></i> DevOps & Tools
-                    </h4>
-                    <p className="text-beige-700 dark:text-beige-300 text-sm">
-                      Leveraging modern development tools and CI/CD practices to streamline workflow, ensure code quality, and optimize deployment processes.
-                    </p>
-                  </div>
                 </div>
               </motion.div>
             </TabsContent>

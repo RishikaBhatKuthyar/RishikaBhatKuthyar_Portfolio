@@ -57,16 +57,7 @@ const SkillBar: FC<SkillBarProps> = ({ name, percentage, icon, delay = 0 }) => {
         <i className={`${iconClass} text-3xl text-beige-700 dark:text-beige-300`}></i>
       </motion.div>
       
-      <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">{name}</h3>
-      
-      <motion.span 
-        className="text-sm font-medium text-beige-600 dark:text-beige-400 bg-beige-100 dark:bg-beige-900/20 px-2 py-1 rounded-full"
-        initial={{ opacity: 0.7 }}
-        animate={{ opacity: isHovered ? 1 : 0.7 }}
-        transition={{ duration: 0.2 }}
-      >
-        {getSkillLevel(percentage)}
-      </motion.span>
+      <h3 className="text-lg font-semibold text-beige-800 dark:text-beige-200">{name}</h3>
       
       {/* Bottom border that appears on hover */}
       <motion.div 
