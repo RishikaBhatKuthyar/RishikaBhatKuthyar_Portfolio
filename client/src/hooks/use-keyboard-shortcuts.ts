@@ -39,7 +39,7 @@ export function useKeyboardShortcuts(additionalShortcuts?: ShortcutMap) {
       
       // Accessibility shortcut to display help dialog - using ?
       '?': () => {
-        // We'll implement this dialog separately
+        // Dispatch custom event to toggle the help dialog
         const event = new CustomEvent('toggle-shortcut-help');
         document.dispatchEvent(event);
       }
