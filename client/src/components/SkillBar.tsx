@@ -3,89 +3,78 @@ import { motion } from "framer-motion";
 
 interface SkillBarProps {
   name: string;
-  percentage: number;
+  percentage: number; // Still used for level calculation, but not displayed
+  icon?: string; // Icon class or URL
   delay?: number;
 }
 
-const SkillBar: FC<SkillBarProps> = ({ name, percentage, delay = 0 }) => {
+const SkillBar: FC<SkillBarProps> = ({ name, percentage, icon, delay = 0 }) => {
   const [isHovered, setIsHovered] = useState(false);
   
-  // Function to determine color based on percentage
-  const getBarColor = (percent: number) => {
-    if (percent >= 90) return "bg-gradient-to-r from-primary-600 to-primary-500";
-    if (percent >= 80) return "bg-gradient-to-r from-primary-500 to-blue-500";
-    if (percent >= 70) return "bg-gradient-to-r from-blue-500 to-blue-400";
-    if (percent >= 60) return "bg-gradient-to-r from-blue-400 to-cyan-500";
-    return "bg-gradient-to-r from-cyan-500 to-cyan-400";
+  // Function to get skill level based on percentage
+  const getSkillLevel = (percent: number) => {
+    if (percent >= 90) return "Expert";
+    if (percent >= 80) return "Advanced";
+    if (percent >= 70) return "Intermediate";
+    if (percent >= 60) return "Competent";
+    return "Beginner";
   };
+  
+  // Function for default icon if none provided
+  const getDefaultIcon = () => {
+    if (name.toLowerCase().includes("javascript") || name.toLowerCase().includes("js")) return "ri-javascript-fill";
+    if (name.toLowerCase().includes("typescript") || name.toLowerCase().includes("ts")) return "ri-file-code-line";
+    if (name.toLowerCase().includes("react")) return "ri-reactjs-line";
+    if (name.toLowerCase().includes("node")) return "ri-nodejs-line";
+    if (name.toLowerCase().includes("html")) return "ri-html5-fill";
+    if (name.toLowerCase().includes("css")) return "ri-css3-fill";
+    if (name.toLowerCase().includes("tailwind")) return "ri-wind-line";
+    if (name.toLowerCase().includes("mongo")) return "ri-database-2-line";
+    if (name.toLowerCase().includes("sql") || name.toLowerCase().includes("postgres")) return "ri-database-line";
+    if (name.toLowerCase().includes("express")) return "ri-server-line";
+    if (name.toLowerCase().includes("next")) return "ri-next-js-fill";
+    return "ri-code-s-slash-line";
+  };
+  
+  const iconClass = icon || getDefaultIcon();
   
   return (
     <motion.div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      whileHover={{ scale: 1.02 }}
-      className="p-2 rounded-lg transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-700/50"
+      whileHover={{ scale: 1.05 }}
+      className="p-4 rounded-lg transition-all duration-300 hover:bg-beige-100 dark:hover:bg-gray-800 flex flex-col items-center"
+      style={{
+        backgroundColor: isHovered ? 'var(--color-beige-100)' : 'transparent',
+        boxShadow: isHovered ? '0 4px 12px rgba(0, 0, 0, 0.05)' : 'none'
+      }}
     >
-      <div className="flex justify-between mb-1">
-        <motion.span 
-          className="text-gray-700 dark:text-gray-300 font-medium"
-          animate={{ 
-            scale: isHovered ? 1.05 : 1,
-            color: isHovered ? "var(--color-primary-600)" : "currentColor"
-          }}
-          transition={{ duration: 0.2 }}
-        >
-          {name}
-        </motion.span>
-        <motion.span 
-          className="text-gray-700 dark:text-gray-300 font-bold"
-          animate={{ scale: isHovered ? 1.1 : 1 }}
-          transition={{ duration: 0.2 }}
-        >
-          {percentage}%
-        </motion.span>
-      </div>
-      
-      <div className="skill-bar h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-        <motion.div 
-          className={`h-full ${getBarColor(percentage)} rounded-full relative`}
-          initial={{ width: 0 }}
-          whileInView={{ width: `${percentage}%` }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay, ease: "easeOut" }}
-        >
-          {isHovered && (
-            <motion.div 
-              className="absolute inset-0 bg-white opacity-20"
-              initial={{ opacity: 0 }}
-              animate={{ 
-                opacity: [0.1, 0.2, 0.1],
-                x: ["0%", "100%", "0%"] 
-              }}
-              transition={{ 
-                duration: 1.5, 
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-          )}
-        </motion.div>
-      </div>
-      
-      {/* Skill level label */}
       <motion.div 
-        className="mt-1 text-xs text-right"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isHovered ? 1 : 0 }}
+        className="flex items-center justify-center w-16 h-16 mb-3 rounded-full bg-beige-200 dark:bg-beige-900/30"
+        whileHover={{ scale: 1.1, rotate: 5 }}
         transition={{ duration: 0.3 }}
       >
-        <span className="text-gray-500 dark:text-gray-400 italic">
-          {percentage >= 90 ? "Expert" : 
-           percentage >= 80 ? "Advanced" : 
-           percentage >= 70 ? "Intermediate" : 
-           percentage >= 60 ? "Competent" : "Beginner"}
-        </span>
+        <i className={`${iconClass} text-3xl text-beige-700 dark:text-beige-300`}></i>
       </motion.div>
+      
+      <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">{name}</h3>
+      
+      <motion.span 
+        className="text-sm font-medium text-beige-600 dark:text-beige-400 bg-beige-100 dark:bg-beige-900/20 px-2 py-1 rounded-full"
+        initial={{ opacity: 0.7 }}
+        animate={{ opacity: isHovered ? 1 : 0.7 }}
+        transition={{ duration: 0.2 }}
+      >
+        {getSkillLevel(percentage)}
+      </motion.span>
+      
+      {/* Bottom border that appears on hover */}
+      <motion.div 
+        className="absolute bottom-0 left-0 right-0 h-1 bg-beige-500 dark:bg-beige-700 rounded-b-lg"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: isHovered ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
     </motion.div>
   );
 };

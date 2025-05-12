@@ -44,6 +44,18 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        beige: {
+          "50": "var(--color-beige-50)",
+          "100": "var(--color-beige-100)",
+          "200": "var(--color-beige-200)",
+          "300": "var(--color-beige-300)",
+          "400": "var(--color-beige-400)",
+          "500": "var(--color-beige-500)",
+          "600": "var(--color-beige-600)",
+          "700": "var(--color-beige-700)",
+          "800": "var(--color-beige-800)",
+          "900": "var(--color-beige-900)",
+        },
         chart: {
           "1": "hsl(var(--chart-1))",
           "2": "hsl(var(--chart-2))",

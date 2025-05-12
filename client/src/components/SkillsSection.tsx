@@ -27,7 +27,7 @@ const SkillsSection = () => {
   };
   
   return (
-    <section id="skills" className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+    <section id="skills" className="py-20 px-4 bg-beige-50 dark:bg-gray-900">
       <div className="container mx-auto">
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-12"
@@ -87,7 +87,7 @@ const SkillsSection = () => {
                     </span>
                   </div>
                   
-                  <div className="space-y-2">
+                  <div className="grid grid-cols-2 gap-4">
                     {frontendSkills.map((skill, index) => (
                       <SkillBar 
                         key={index}
@@ -112,7 +112,7 @@ const SkillsSection = () => {
                     </span>
                   </div>
                   
-                  <div className="space-y-2">
+                  <div className="grid grid-cols-2 gap-4">
                     {backendSkills.map((skill, index) => (
                       <SkillBar 
                         key={index}
@@ -200,7 +200,7 @@ const SkillsSection = () => {
                   </span>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {frontendSkills.map((skill, index) => (
                     <SkillBar 
                       key={index}
@@ -238,7 +238,7 @@ const SkillsSection = () => {
                   </span>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {backendSkills.map((skill, index) => (
                     <SkillBar 
                       key={index}
