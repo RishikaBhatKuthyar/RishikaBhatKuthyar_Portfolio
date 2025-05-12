@@ -43,25 +43,25 @@ const SkillBar: FC<SkillBarProps> = ({ name, percentage, icon, delay = 0 }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{ scale: 1.05 }}
-      className="p-4 rounded-lg transition-all duration-300 hover:bg-beige-100 dark:hover:bg-gray-800 flex flex-col items-center"
+      className="p-4 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 flex flex-col items-center"
       style={{
-        backgroundColor: isHovered ? 'var(--color-beige-100)' : 'transparent',
+        backgroundColor: isHovered ? 'hsl(240 4.8% 95.9%)' : 'transparent',
         boxShadow: isHovered ? '0 4px 12px rgba(0, 0, 0, 0.05)' : 'none'
       }}
     >
       <motion.div 
-        className="flex items-center justify-center w-16 h-16 mb-3 rounded-full bg-beige-200 dark:bg-beige-900/30"
+        className="flex items-center justify-center w-16 h-16 mb-3 rounded-full bg-gray-200 dark:bg-gray-700/50"
         whileHover={{ scale: 1.1, rotate: 5 }}
         transition={{ duration: 0.3 }}
       >
-        <i className={`${iconClass} text-3xl text-beige-700 dark:text-beige-300`}></i>
+        <i className={`${iconClass} text-3xl text-gray-700 dark:text-gray-300`}></i>
       </motion.div>
       
-      <h3 className="text-lg font-semibold text-beige-800 dark:text-beige-200">{name}</h3>
+      <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{name}</h3>
       
       {/* Bottom border that appears on hover */}
       <motion.div 
-        className="absolute bottom-0 left-0 right-0 h-1 bg-beige-500 dark:bg-beige-700 rounded-b-lg"
+        className="absolute bottom-0 left-0 right-0 h-1 bg-gray-500 dark:bg-gray-600 rounded-b-lg"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: isHovered ? 1 : 0 }}
         transition={{ duration: 0.3 }}

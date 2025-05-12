@@ -27,7 +27,7 @@ const SkillsSection = () => {
   };
   
   return (
-    <section id="skills" className="py-20 px-4 bg-beige-50 dark:bg-gray-900">
+    <section id="skills" className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto">
         <motion.div 
           className="max-w-3xl mx-auto text-center mb-12"
@@ -36,8 +36,8 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold text-beige-800 dark:text-beige-100 mb-4">Technical Skills</h2>
-          <p className="text-lg text-beige-700 dark:text-beige-300">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">Technical Skills</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300">
             My technical toolbox includes a wide range of languages, frameworks, and tools.
           </p>
         </motion.div>
@@ -75,14 +75,14 @@ const SkillsSection = () => {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="bg-beige-50 dark:bg-gray-900/80 p-6 rounded-xl shadow-md border border-beige-200 dark:border-beige-800/30"
+                  className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
                   variants={itemVariants}
                 >
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl font-bold text-beige-800 dark:text-beige-100 flex items-center">
-                      <i className="ri-code-s-slash-line mr-2 text-beige-600 dark:text-beige-400"></i> Frontend
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 flex items-center">
+                      <i className="ri-code-s-slash-line mr-2 text-blue-600 dark:text-blue-400"></i> Frontend
                     </h3>
-                    <span className="px-3 py-1 bg-beige-200 text-beige-800 dark:bg-beige-800/30 dark:text-beige-200 text-xs font-medium rounded-full">
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-xs font-medium rounded-full">
                       {frontendSkills.length} Skills
                     </span>
                   </div>
@@ -100,14 +100,14 @@ const SkillsSection = () => {
                 </motion.div>
                 
                 <motion.div 
-                  className="bg-beige-50 dark:bg-gray-900/80 p-6 rounded-xl shadow-md border border-beige-200 dark:border-beige-800/30"
+                  className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
                   variants={itemVariants}
                 >
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl font-bold text-beige-800 dark:text-beige-100 flex items-center">
-                      <i className="ri-server-line mr-2 text-beige-600 dark:text-beige-400"></i> Backend
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 flex items-center">
+                      <i className="ri-server-line mr-2 text-green-600 dark:text-green-400"></i> Backend
                     </h3>
-                    <span className="px-3 py-1 bg-beige-200 text-beige-800 dark:bg-beige-800/30 dark:text-beige-200 text-xs font-medium rounded-full">
+                    <span className="px-3 py-1 bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 text-xs font-medium rounded-full">
                       {backendSkills.length} Skills
                     </span>
                   </div>
@@ -127,17 +127,17 @@ const SkillsSection = () => {
               
               {/* Other Skills */}
               <motion.div 
-                className="mt-8 bg-beige-50 dark:bg-gray-900/80 p-6 rounded-xl shadow-md border border-beige-200 dark:border-beige-800/30"
+                className="mt-8 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-beige-800 dark:text-beige-100 flex items-center">
-                    <i className="ri-tools-line mr-2 text-beige-600 dark:text-beige-400"></i> Tools & Other Skills
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 flex items-center">
+                    <i className="ri-tools-line mr-2 text-purple-600 dark:text-purple-400"></i> Tools & Other Skills
                   </h3>
-                  <span className="px-3 py-1 bg-beige-200 text-beige-800 dark:bg-beige-800/30 dark:text-beige-200 text-xs font-medium rounded-full">
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 text-xs font-medium rounded-full">
                     {otherSkills.length} Skills
                   </span>
                 </div>
@@ -158,17 +158,17 @@ const SkillsSection = () => {
             
             <TabsContent value="frontend">
               <motion.div
-                className="bg-beige-50 dark:bg-gray-900/80 p-6 rounded-xl shadow-md border border-beige-200 dark:border-beige-800/30"
+                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-beige-800 dark:text-beige-100 flex items-center">
-                    <i className="ri-code-s-slash-line mr-2 text-beige-600 dark:text-beige-400"></i> Frontend Technologies
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 flex items-center">
+                    <i className="ri-code-s-slash-line mr-2 text-blue-600 dark:text-blue-400"></i> Frontend Technologies
                   </h3>
-                  <span className="px-3 py-1 bg-beige-200 text-beige-800 dark:bg-beige-800/30 dark:text-beige-200 text-xs font-medium rounded-full">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-xs font-medium rounded-full">
                     {frontendSkills.length} Skills
                   </span>
                 </div>
@@ -184,9 +184,9 @@ const SkillsSection = () => {
                   ))}
                 </div>
                 
-                <div className="mt-6 p-4 bg-beige-100 dark:bg-beige-900/20 rounded-lg">
-                  <h4 className="font-semibold text-beige-800 dark:text-beige-200 mb-2">Frontend Focus</h4>
-                  <p className="text-beige-700 dark:text-beige-300">
+                <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                  <h4 className="font-semibold text-gray-800 dark:text-gray-100 mb-2">Frontend Focus</h4>
+                  <p className="text-gray-700 dark:text-gray-300">
                     I specialize in building responsive, accessible, and performant user interfaces with modern frontend technologies. 
                     My primary focus is on creating intuitive and delightful user experiences.
                   </p>
