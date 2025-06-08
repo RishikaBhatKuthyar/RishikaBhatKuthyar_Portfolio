@@ -6,10 +6,14 @@ import ReviewsSection from "../components/ReviewsSection";
 
 const HomePage = () => {
   return (
-    <div className="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white">
+    <div className="min-h-screen">
       <HeroSection />
-      <AboutSection />
-      <ReviewsSection />
+      <div className="gradient-bg-cool">
+        <AboutSection />
+      </div>
+      <div className="bg-white dark:bg-gray-900">
+        <ReviewsSection />
+      </div>
     </div>
   );
 };
