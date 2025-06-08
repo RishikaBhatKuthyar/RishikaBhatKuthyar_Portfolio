@@ -1,24 +1,18 @@
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
+import { getSkillLevel } from "@/utils/helpers";
+import { cn } from "@/lib/utils";
 
 interface SkillBarProps {
   name: string;
-  percentage: number; // Still used for level calculation, but not displayed
-  icon?: string; // Icon class or URL
+  percentage: number;
+  icon?: string;
   delay?: number;
+  className?: string;
 }
 
-const SkillBar: FC<SkillBarProps> = ({ name, percentage, icon, delay = 0 }) => {
+const SkillBar: FC<SkillBarProps> = ({ name, percentage, icon, delay = 0, className }) => {
   const [isHovered, setIsHovered] = useState(false);
-  
-  // Function to get skill level based on percentage
-  const getSkillLevel = (percent: number) => {
-    if (percent >= 90) return "Expert";
-    if (percent >= 80) return "Advanced";
-    if (percent >= 70) return "Intermediate";
-    if (percent >= 60) return "Competent";
-    return "Beginner";
-  };
   
   // Function for default icon if none provided
   const getDefaultIcon = () => {
