@@ -26,10 +26,10 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-800 shadow-md z-50 transition-colors duration-300">
+    <header className="fixed top-0 left-0 right-0 glass-morphism backdrop-blur-md z-50 transition-all duration-300">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-primary-700 dark:text-primary-400">
+          <Link href="/" className="text-2xl font-bold gradient-text-primary hover:scale-105 transition-transform duration-300">
             JD
           </Link>
           
@@ -40,8 +40,8 @@ const Header = () => {
                 <Link 
                   href="/" 
                   className={cn(
-                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
-                    isActiveRoute("/") && "text-primary-600 dark:text-primary-400"
+                    "text-gray-700 dark:text-gray-200 hover:gradient-text-primary font-medium transition-all duration-300 hover:scale-105",
+                    isActiveRoute("/") && "gradient-text-primary"
                   )}
                 >
                   Home
