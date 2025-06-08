@@ -1,0 +1,86 @@
+(base) rishikabhat@Rishikas-MacBook-Pro EngineerShowcase % npm install
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'connect-pg-simple@10.0.0',
+npm WARN EBADENGINE   required: { node: '^18.18.0 || ^20.9.0 || >=22.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'esbuild@0.25.0',
+npm WARN EBADENGINE   required: { node: '>=18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'react-hook-form@7.55.0',
+npm WARN EBADENGINE   required: { node: '>=18.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'rollup@4.24.4',
+npm WARN EBADENGINE   required: { node: '>=18.0.0', npm: '>=8.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'tsx@4.19.2',
+npm WARN EBADENGINE   required: { node: '>=18.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'esbuild@0.23.1',
+npm WARN EBADENGINE   required: { node: '>=18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'vite@5.4.14',
+npm WARN EBADENGINE   required: { node: '^18.0.0 || >=20.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'zod-validation-error@3.4.0',
+npm WARN EBADENGINE   required: { node: '>=18.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+npm WARN deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm WARN deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+
+added 478 packages, and audited 479 packages in 13s
+
+63 packages are looking for funding
+  run `npm fund` for details
+
+7 moderate severity vulnerabilities
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm notice 
+npm notice New major version of npm available! 8.19.4 -> 11.3.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.3.0
+npm notice Run npm install -g npm@11.3.0 to update!
+npm notice 
+(base) rishikabhat@Rishikas-MacBook-Pro EngineerShowcase % npm run dev
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+node:internal/errors:478
+    ErrorCaptureStackTrace(err);
+    ^
+
+TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at __node_internal_captureLargerStackTrace (node:internal/errors:478:5)
+    at new NodeError (node:internal/errors:387:5)
+    at validateString (node:internal/validators:162:11)
+    at Object.resolve (node:path:1098:7)
+    at <anonymous> (/Users/rishikabhat/Downloads/EngineerShowcase/vite.config.ts:21:17)
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+(base) rishikabhat@Rishikas-MacBook-Pro EngineerShowcase % 
