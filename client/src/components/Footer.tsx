@@ -5,13 +5,16 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white py-12 px-4">
-      <div className="container mx-auto">
+    <footer className="gradient-bg-dark text-white py-12 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-full h-1 gradient-bg-primary"></div>
+      </div>
+      <div className="container mx-auto relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <Link href="/" className="text-3xl font-bold text-primary-500">JD</Link>
-              <p className="text-gray-400 mt-2 text-center md:text-left">Software Engineer & Web Developer</p>
+              <Link href="/" className="text-3xl font-bold gradient-text-accent text-white">JD</Link>
+              <p className="text-gray-300 mt-2 text-center md:text-left">Software Engineer & Web Developer</p>
             </div>
             
             <div className="flex space-x-6">
