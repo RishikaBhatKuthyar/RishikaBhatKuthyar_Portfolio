@@ -1,30 +1,15 @@
-export interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  category: "frontend" | "backend" | "fullstack" | "mobile";
-  tags: string[];
-  demoLink: string;
-  codeLink: string;
-}
+// Import types from centralized type definitions
+import type { 
+  Project, 
+  Skill, 
+  OtherSkill, 
+  WorkExperience,
+  BlogPost,
+  Review 
+} from "@/types";
 
-export interface Skill {
-  name: string;
-  percentage: number;
-}
-
-export interface OtherSkill {
-  name: string;
-  icon: string;
-}
-
-export interface WorkExperience {
-  title: string;
-  company: string;
-  period: string;
-  description: string;
-}
+// Re-export for backwards compatibility
+export type { Project, Skill, OtherSkill, WorkExperience };
 
 export const projects: Project[] = [
   {
