@@ -158,23 +158,35 @@ const BlogPage = () => {
   };
   
   return (
-    <div className="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white pt-24">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen pt-24">
+      {/* Hero Section for Blog */}
+      <section className="gradient-bg-accent relative overflow-hidden py-20">
+        <div className="absolute inset-0 opacity-15">
+          <div className="absolute top-20 left-20 w-22 h-22 bg-white rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-16 h-16 bg-white rounded-full animate-pulse animation-delay-1500"></div>
+          <div className="absolute top-1/2 right-1/3 w-12 h-12 bg-white rounded-full animate-pulse animation-delay-500"></div>
+        </div>
         <motion.div
-          className="max-w-3xl mx-auto text-center mb-12"
+          className="container mx-auto px-4 text-center relative z-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8 }}
         >
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Blog</h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-            Thoughts, tutorials, and insights about web development and software engineering.
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in-up">
+            My <span className="text-yellow-300">Blog</span>
+          </h1>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto animate-fade-in-left">
+            Insights, tutorials, and thoughts on software development and technology
           </p>
         </motion.div>
-        
-        {/* Search bar */}
-        <div className="max-w-md mx-auto mb-8">
-          <div className="relative">
+      </section>
+      
+      {/* Blog Content */}
+      <div className="gradient-bg-warm py-16">
+        <div className="container mx-auto px-4">
+          {/* Search bar */}
+          <div className="max-w-md mx-auto mb-8">
+            <div className="relative">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <i className="ri-search-line text-gray-500 dark:text-gray-400"></i>
             </div>
@@ -340,6 +352,7 @@ const BlogPage = () => {
             </motion.button>
           </motion.div>
         )}
+        </div>
       </div>
     </div>
   );
