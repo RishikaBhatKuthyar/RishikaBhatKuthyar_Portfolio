@@ -1,6 +1,7 @@
-# 🧑‍💻 Rishika Bhat – Full Stack Portfolio
+# 🧑‍💻 My Portfolio
 
-A full-stack web application built with a modern development stack to showcase technical expertise, professional projects, and software engineering skills. It leverages a modular and scalable architecture optimized for performance, rapid development, and clean code practices. The frontend is powered by React and Tailwind CSS using Vite for lightning-fast builds, while the backend uses Express.js with TypeScript to handle API requests and server-side logic.
+A full-stack web application built using a modern tech stack to showcase who I am as a developer. It highlights my technical expertise, software projects, and engineering skills through a clean and responsive UI. Built with scalability and performance in mind, the frontend runs on React and Tailwind CSS with Vite for ultra-fast builds, while Express.js and TypeScript power the backend to handle server logic and APIs.
+
 
 ---
 
