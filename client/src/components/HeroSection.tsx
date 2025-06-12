@@ -24,10 +24,11 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in-up">
-            Hello, I'm <span className="text-yellow-300 animate-pulse-glow">John Doe</span>
+            Hello, I'm <span className="text-yellow-300 animate-pulse-glow">Rishika Bhat</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in-left">
-            Software Engineer passionate about building modern web applications with TypeScript and React
+        Software Engineer passionate about solving real-time challenges with scalable, AI-driven solutions using Java, Python, Spring Boot, and Docker.
+
           </p>
           <div className="flex flex-wrap justify-center gap-4 animate-slide-in-right">
             <Link href="/projects">

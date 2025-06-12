@@ -4,13 +4,13 @@ export interface Project {
   title: string;
   description: string;
   image: string;
-  category: "frontend" | "backend" | "fullstack" | "mobile";
+  category: ("frontend" | "backend" | "fullstack" | "devops")[];
   tags: string[];
-  demoLink: string;
-  codeLink: string;
+  reference: string;
+  
 }
 
-export type ProjectCategory = "all" | "frontend" | "backend" | "fullstack" | "mobile";
+export type ProjectCategory = "all" | "frontend" | "backend" | "fullstack" | "devops";
 
 // Skill types
 export interface Skill {

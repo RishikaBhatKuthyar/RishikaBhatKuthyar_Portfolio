@@ -9,6 +9,7 @@ import HomePage from "@/pages/HomePage";
 import ProjectsPage from "@/pages/ProjectsPage";
 import SkillsPage from "@/pages/SkillsPage";
 import ExperiencePage from "@/pages/ExperiencePage";
+import EducationPage from "@/pages/EducationPage";
 import ResumePage from "@/pages/ResumePage";
 import BlogPage from "@/pages/BlogPage";
 import ContactPage from "@/pages/ContactPage";
@@ -67,6 +68,7 @@ function Router() {
         <Route path="/projects" component={ProjectsPage} />
         <Route path="/skills" component={SkillsPage} />
         <Route path="/experience" component={ExperiencePage} />
+        <Route path="/education" component={EducationPage} />
         <Route path="/resume" component={ResumePage} />
         <Route path="/blog" component={BlogPage} />
         <Route path="/contact" component={ContactPage} />

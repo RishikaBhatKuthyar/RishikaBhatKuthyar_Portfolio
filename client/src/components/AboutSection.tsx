@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import TimelineItem from "@/components/TimelineItem";
 import { workExperience } from "@/lib/data";
+import profilePic from "@/assets/profile.jpeg";
+
 
 const AboutSection = () => {
   return (
@@ -16,31 +18,31 @@ const AboutSection = () => {
             >
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                I'm a software engineer with 5+ years of experience building modern web applications. I specialize in TypeScript, React, and Node.js development with a focus on creating performant and accessible user experiences.
+                I'm a software engineer with 2+ years of experience building modern web applications. I specialize in Java, Python, Spring Boot, Docker, and React JS development with a focus on creating performant and accessible user experiences.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                My approach combines technical expertise with an eye for design and a deep understanding of user needs. I'm passionate about clean code, best practices, and continuous learning.
-              </p>
+              I'm Passionate about problem-solving and innovation, I thrive in dynamic environments where I can apply my technical skills and analytical thinking. I am continuously seeking opportunities to learn, contribute, and grow in the ever-evolving field of technology.
+            </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <div className="flex items-center text-gray-700 dark:text-gray-300">
                   <i className="ri-map-pin-line text-lg text-primary-600 dark:text-primary-400 mr-2"></i>
-                  <span>San Francisco, CA</span>
+                  <span>Boston, MA</span>
                 </div>
                 <div className="flex items-center text-gray-700 dark:text-gray-300">
                   <i className="ri-mail-line text-lg text-primary-600 dark:text-primary-400 mr-2"></i>
-                  <span>john.doe@example.com</span>
+                  <span>kuthyar.ri@northeastern.edu</span>
                 </div>
               </div>
               
-              <motion.a 
+              {/* <motion.a 
                 href="#"
                 className="inline-block px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Download Resume
-              </motion.a>
+              </motion.a> */}
             </motion.div>
             
             <motion.div
@@ -51,14 +53,10 @@ const AboutSection = () => {
             >
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                  alt="John Doe" 
+                  src={profilePic} 
+                  alt="Rishika Bhat Kuthyar" 
                   className="w-full h-auto rounded-xl shadow-lg" 
-                />
-                <div className="absolute -bottom-4 -right-4 bg-primary-50 dark:bg-primary-900 rounded-lg p-4 shadow-md border-2 border-primary-500">
-                  <div className="text-primary-700 dark:text-primary-300 font-bold text-xl">5+</div>
-                  <div className="text-primary-600 dark:text-primary-400 text-sm">Years of Experience</div>
-                </div>
+                />   
               </div>
             </motion.div>
           </div>

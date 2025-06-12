@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/lib/data";
 
-type ProjectCategory = "all" | "frontend" | "backend" | "fullstack" | "mobile";
+type ProjectCategory = "all" | "frontend" | "backend" | "fullstack"| "devops";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory>("all");
@@ -41,36 +41,37 @@ const ProjectsSection = () => {
 
   // Apply filters whenever they change
   useEffect(() => {
-    const filterProjects = () => {
-      let result = projects;
-      
-      // Apply category filter
-      if (activeFilter !== "all") {
-        result = result.filter(project => project.category === activeFilter);
-      }
-      
-      // Apply tag filter
-      if (activeTag) {
-        result = result.filter(project => project.tags.includes(activeTag));
-      }
-      
-      // Apply search filter
-      if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        result = result.filter(
-          project =>
-            project.title.toLowerCase().includes(query) ||
-            project.description.toLowerCase().includes(query) ||
-            project.tags.some(tag => tag.toLowerCase().includes(query))
-        );
-      }
-      
-      setFilteredProjects(result);
-      setTimeout(() => setIsFiltering(false), 600);
-    };
-    
-    filterProjects();
-  }, [activeFilter, activeTag, searchQuery]);
+  const filterProjects = () => {
+    let result = [...projects];
+
+    if (activeFilter !== "all") {
+      result = result.filter(project => 
+        Array.isArray(project.category) && project.category.includes(activeFilter)
+      );
+    }
+
+    if (activeTag) {
+      result = result.filter(project =>
+        project.tags.some(tag => tag.toLowerCase() === activeTag.toLowerCase())
+      );
+    }
+
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter(
+        project =>
+          project.title.toLowerCase().includes(query) ||
+          project.description.toLowerCase().includes(query) ||
+          project.tags.some(tag => tag.toLowerCase().includes(query))
+      );
+    }
+
+    setFilteredProjects(result);
+    setTimeout(() => setIsFiltering(false), 600);
+  };
+
+  filterProjects();
+}, [activeFilter, activeTag, searchQuery]);
 
   // Animation variants
   const containerVariants = {
@@ -134,7 +135,7 @@ const ProjectsSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              All
+              all
             </motion.button>
             <motion.button 
               onClick={() => handleFilterClick("frontend")}
@@ -146,7 +147,7 @@ const ProjectsSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Frontend
+              frontend
             </motion.button>
             <motion.button 
               onClick={() => handleFilterClick("backend")}
@@ -158,7 +159,7 @@ const ProjectsSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Backend
+              backend
             </motion.button>
             <motion.button 
               onClick={() => handleFilterClick("fullstack")}
@@ -170,19 +171,19 @@ const ProjectsSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Full Stack
+              fullstack
             </motion.button>
             <motion.button 
-              onClick={() => handleFilterClick("mobile")}
+              onClick={() => handleFilterClick("devops")}
               className={`px-4 py-2 rounded-full font-medium text-sm transition-all ${
-                activeFilter === "mobile" 
+                activeFilter === "devops" 
                   ? "bg-primary-600 text-white shadow-md" 
                   : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Mobile
+              devops
             </motion.button>
           </div>
           
@@ -230,25 +231,30 @@ const ProjectsSection = () => {
         
         {/* Project grid */}
         <AnimatePresence mode="wait">
-          <motion.div 
-            key={`${activeFilter}-${activeTag}-${searchQuery}`}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate="show"
-          >
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                transition={{ duration: 0.5 }}
-                layout
-                className="h-full"
-              >
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
-          </motion.div>
+          <motion.div
+  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+  variants={containerVariants}
+  initial="hidden"
+  animate="show"
+>
+  <AnimatePresence mode="wait">
+    {filteredProjects.map((project) => (
+      <motion.div
+        key={project.id}
+        variants={itemVariants}
+        initial="hidden"
+        animate="show"
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.5 }}
+        layout
+        className="h-full"
+      >
+        <ProjectCard project={project} />
+      </motion.div>
+    ))}
+  </AnimatePresence>
+</motion.div>
+
         </AnimatePresence>
         
         {/* Empty state */}

@@ -30,7 +30,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold gradient-text-primary hover:scale-105 transition-transform duration-300">
-            JD
+            RBK
           </Link>
           
           {/* Desktop Navigation */}
@@ -47,18 +47,7 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link 
-                  href="/projects" 
-                  className={cn(
-                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
-                    isActiveRoute("/projects") && "text-primary-600 dark:text-primary-400"
-                  )}
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
+                            <li>
                 <Link 
                   href="/skills" 
                   className={cn(
@@ -69,7 +58,7 @@ const Header = () => {
                   Skills
                 </Link>
               </li>
-              <li>
+                            <li>
                 <Link 
                   href="/experience" 
                   className={cn(
@@ -82,6 +71,30 @@ const Header = () => {
               </li>
               <li>
                 <Link 
+                  href="/education" 
+                  className={cn(
+                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
+                    isActiveRoute("/education") && "text-primary-600 dark:text-primary-400"
+                  )}
+                >
+                  Education
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/projects" 
+                  className={cn(
+                    "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
+                    isActiveRoute("/projects") && "text-primary-600 dark:text-primary-400"
+                  )}
+                >
+                  Projects
+                </Link>
+              </li>
+
+
+              <li>
+                <Link 
                   href="/resume" 
                   className={cn(
                     "text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors",
@@ -91,7 +104,7 @@ const Header = () => {
                   Resume
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link 
                   href="/blog" 
                   className={cn(
@@ -101,7 +114,7 @@ const Header = () => {
                 >
                   Blog
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link 
                   href="/contact" 

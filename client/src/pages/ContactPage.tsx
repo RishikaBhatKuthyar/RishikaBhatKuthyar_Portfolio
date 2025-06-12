@@ -59,7 +59,7 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <div className="text-white/70 text-sm mb-1">Email</div>
-                        <a href="mailto:john.doe@example.com" className="text-white hover:text-yellow-300 transition-colors">john.doe@example.com</a>
+                        <a href="mailto:kuthyar.ri@northeastern.edu" className="text-white hover:text-yellow-300 transition-colors">kuthyar.ri@northeastern.edu</a>
                       </div>
                     </div>
                     
@@ -69,7 +69,7 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <div className="text-white/70 text-sm mb-1">Phone</div>
-                        <a href="tel:+11234567890" className="text-white hover:text-yellow-300 transition-colors">+1 (123) 456-7890</a>
+                        <a href="tel:+18574238702" className="text-white hover:text-yellow-300 transition-colors">+1 (857) 423-8702</a>
                       </div>
                     </div>
                     
@@ -79,7 +79,7 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <div className="text-white/70 text-sm mb-1">Location</div>
-                        <div className="text-white">San Francisco, California, USA</div>
+                        <div className="text-white">Boston, Massachusetts, USA</div>
                       </div>
                     </div>
                   </div>
@@ -103,16 +103,7 @@ const ContactPage = () => {
                       <i className="ri-linkedin-fill text-2xl mr-3 text-blue-300"></i>
                       <span className="text-white font-medium">LinkedIn</span>
                     </a>
-                    
-                    <a href="#" className="flex items-center p-4 bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
-                      <i className="ri-twitter-fill text-2xl mr-3 text-blue-300"></i>
-                      <span className="text-white font-medium">Twitter</span>
-                    </a>
-                    
-                    <a href="#" className="flex items-center p-4 bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
-                      <i className="ri-medium-fill text-2xl mr-3 text-white"></i>
-                      <span className="text-white font-medium">Medium</span>
-                    </a>
+                  
                   </div>
                 </motion.div>
               </div>
