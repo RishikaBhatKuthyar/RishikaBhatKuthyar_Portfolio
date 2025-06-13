@@ -7,7 +7,7 @@ import jobportalimage from "@/assets/jobportalimage.png";
 import gatepassimage from "@/assets/gatepassimage.png";
 import terraformimage from "@/assets/terraformimage.png"; 
 import kafkaimage from "@/assets/kafkaimage.png";
-
+import portfolioimage from "@/assets/portfolioimage.png"; 
 
 import type { 
   Project, 
@@ -112,7 +112,17 @@ export const projects: Project[] = [
   ],
   reference: "https://github.com/RishikaBhatKuthyar/realtime-wikimedia-data-processing-kafka"
 },
-
+{
+  id: 9,
+  title: "My Portfolio Website",
+  description: `A full-stack web application built with a modern development stack to showcase technical expertise, professional projects, and software engineering skills. It leverages a modular and scalable architecture optimized for performance, rapid development, and clean code practices. The frontend is powered by React and Tailwind CSS using Vite for lightning-fast builds, while the backend uses Express.js with TypeScript to handle API requests and server-side logic.`,
+  image: portfolioimage,
+  category: ["fullstack", "frontend", "backend"],
+  tags: [
+    "React", "Vite", "Tailwind CSS", "PostCSS", "Node.js", "Express.js", "TypeScript"
+  ],
+  reference: "https://github.com/RishikaBhatKuthyar/RishikaBhatKuthyar_Portfolio"
+},
 
 ];
 
@@ -174,7 +184,7 @@ export const extraExperience: ExtraExperience[] = [
     period: "July 2021 – Jan 2022",
     skills: ["Team Management", "Collaboration", "Decision Making", "Advocacy"],
     description:
-      "Directed daily operations and managed a diverse volunteer team to advance outreach programs. Secured funding, coordinated advocacy campaigns, and fostered collaboration to increase public engagement and support for the NGO’s mission.",
+      "Directed daily operations and managed a diverse volunteer team to advance outreach programs. Secured funding, coordinated advocacy campaigns, and encouraged collaboration to increase public engagement and support for the NGO’s mission.",
   },
 ];
 
