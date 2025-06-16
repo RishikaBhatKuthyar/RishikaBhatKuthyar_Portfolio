@@ -109,8 +109,8 @@ const SkillsSection = () => {
             className="mb-8"
             onValueChange={(value) => setActiveTab(value as SkillCategory)}
           >
-            <div className="flex justify-center mb-6">
-              <TabsList className="grid grid-cols-6 w-full max-w-3xl">
+              <div className="overflow-x-auto mb-6">
+                <TabsList className="flex flex-nowrap gap-2 w-max px-2">
                 <TabsTrigger value="all" className="rounded-full">
                   <i className="ri-apps-line mr-2"></i> All
                 </TabsTrigger>

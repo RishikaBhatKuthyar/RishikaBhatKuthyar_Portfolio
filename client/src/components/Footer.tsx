@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <Link href="/" className="text-3xl font-bold gradient-text-accent text-white">RBK</Link>
-              <p className="text-gray-300 mt-2 text-center md:text-left">Software Engineer & Web Developer</p>
+              <p className="text-gray-300 mt-2 text-center md:text-left">Software Engineer</p>
             </div>
             
             <div className="flex space-x-6">
@@ -45,7 +45,6 @@ const Footer = () => {
                 <li><Link href="/projects" className="text-gray-400 hover:text-white transition-colors">Projects</Link></li>
 
                 <li><Link href="/resume" className="text-gray-400 hover:text-white transition-colors">Resume</Link></li>
-                {/* <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li> */}
                 <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </nav>

@@ -80,7 +80,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             Resume
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link 
             href="/blog" 
             className={cn(
@@ -91,7 +91,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           >
             Blog
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link 
             href="/contact" 

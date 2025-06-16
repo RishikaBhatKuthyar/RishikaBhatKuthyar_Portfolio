@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import ContactForm from "@/components/ContactForm";
 
 const ContactPage = () => {
   return (
@@ -31,17 +30,6 @@ const ContactPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <motion.div 
-                className="glass-card p-8 rounded-xl"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h2 className="text-xl font-bold text-white mb-6">Send a Message</h2>
-                <ContactForm />
-              </motion.div>
-              
               {/* Contact Information */}
               <div>
                 <motion.div 
@@ -94,16 +82,15 @@ const ContactPage = () => {
                   <h2 className="text-xl font-bold text-white mb-6">Connect With Me</h2>
                   
                   <div className="grid grid-cols-2 gap-4">
-                    <a href="#" className="flex items-center p-4 bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
+                    <a href="https://github.com/RishikaBhatKuthyar" className="flex items-center p-4 bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
                       <i className="ri-github-fill text-2xl mr-3 text-white"></i>
                       <span className="text-white font-medium">GitHub</span>
                     </a>
                     
-                    <a href="#" className="flex items-center p-4 bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
+                    <a href="https://www.linkedin.com/in/rishikabhat/" className="flex items-center p-4 bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
                       <i className="ri-linkedin-fill text-2xl mr-3 text-blue-300"></i>
                       <span className="text-white font-medium">LinkedIn</span>
                     </a>
-                  
                   </div>
                 </motion.div>
               </div>

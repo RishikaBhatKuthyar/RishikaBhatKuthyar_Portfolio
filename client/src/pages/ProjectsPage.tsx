@@ -19,9 +19,6 @@ const ProjectsPage = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in-up">
             My <span className="text-yellow-300">Projects</span>
           </h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto animate-fade-in-left">
-            Explore my collection of web applications, tools, and experiments built with modern technologies
-          </p>
         </motion.div>
       </section>
       
