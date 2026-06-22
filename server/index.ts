@@ -58,11 +58,8 @@ app.use((req, res, next) => {
 
 
   const port = 3000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
+  // use simple listen signature to avoid platform-specific socket options
+  server.listen(port, "0.0.0.0", () => {
     log(`serving on port ${port}`);
   });
 })();
