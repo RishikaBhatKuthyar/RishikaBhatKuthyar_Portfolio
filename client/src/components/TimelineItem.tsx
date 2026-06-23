@@ -5,7 +5,7 @@ interface TimelineItemProps {
   title: string;
   company: string;
   period: string;
-  description: string;
+  description: string | string[];
   index: number;
 }
 
@@ -28,9 +28,15 @@ const TimelineItem: FC<TimelineItemProps> = ({ title, company, period, descripti
         </div>
         
         <div className="md:pl-8">
-          <p className="text-gray-700 dark:text-gray-300">
-            {description}
-          </p>
+          {Array.isArray(description) ? (
+            <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
+              {description.map((line, idx) => (
+                <li key={idx}>{line}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-gray-700 dark:text-gray-300">{description}</p>
+          )}
         </div>
       </div>
     </motion.div>

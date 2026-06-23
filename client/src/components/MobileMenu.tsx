@@ -68,6 +68,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             Experience
           </Link>
         </li>
+        {/* Resume link commented out per request
         <li>
           <Link 
             href="/resume" 
@@ -80,6 +81,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             Resume
           </Link>
         </li>
+        */}
         {/* <li>
           <Link 
             href="/blog" 

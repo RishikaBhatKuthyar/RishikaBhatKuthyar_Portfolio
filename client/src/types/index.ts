@@ -2,15 +2,15 @@
 export interface Project {
   id: number;
   title: string;
-  description: string;
+  description: string | string[];
   image: string;
-  category: ("frontend" | "backend" | "fullstack" | "devops")[];
+  category: ("frontend" | "backend" | "fullstack" | "devops" | "AI")[];
   tags: string[];
   reference: string;
   
 }
 
-export type ProjectCategory = "all" | "frontend" | "backend" | "fullstack" | "devops";
+export type ProjectCategory = "all" | "frontend" | "backend" | "fullstack" | "devops" | "AI";
 
 // Skill types
 export interface Skill {
@@ -30,7 +30,7 @@ export interface WorkExperience {
   title: string;
   company: string;
   period: string;
-  description: string;
+  description: string | string[];
 }
 
 export interface Review {

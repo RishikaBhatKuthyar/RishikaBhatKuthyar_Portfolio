@@ -27,6 +27,17 @@ const programmingLanguages = [
   { name: "Rust", percentage: 60, icon: SiRust }
 ];
 
+const aiSkills = [
+  { name: "LLMs", percentage: 85, icon: "ri-brain-line" },
+  { name: "Transformer Models", percentage: 80, icon: "ri-stack-line" },
+  { name: "RAG", percentage: 80, icon: "ri-search-line" },
+  { name: "Agentic Workflows", percentage: 75, icon: "ri-robot-line" },
+  { name: "LangChain", percentage: 75, icon: "ri-code-s-slash-line" },
+  { name: "ChromaDB", percentage: 70, icon: FaDatabase },
+  { name: "NLP", percentage: 80, icon: "ri-sound-line" },
+  { name: "LLM Evaluation", percentage: 70, icon: "ri-check-line" }
+];
+
 const frameworksLibraries = [
   { name: "Spring Boot", percentage: 85, icon: SiSpringboot },
   { name: "Spring Cloud", percentage: 80, icon: SiCloudflare },
@@ -117,6 +128,9 @@ const SkillsSection = () => {
                 <TabsTrigger value="languages" className="rounded-full">
                   <i className="ri-code-s-slash-line mr-2"></i> Languages
                 </TabsTrigger>
+                <TabsTrigger value="AI" className="rounded-full">
+                  <i className="ri-brain-line mr-2"></i> AI & ML
+                </TabsTrigger>
                 <TabsTrigger value="frameworks" className="rounded-full">
                   <i className="ri-stack-line mr-2"></i> Frameworks
                 </TabsTrigger>
@@ -192,6 +206,22 @@ const SkillsSection = () => {
                   className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
                   variants={itemVariants}
                 >
+                  <h3 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4">AI & ML</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    {aiSkills.map((skill, index) => (
+                      <SkillIconCard 
+        key={index}
+        name={skill.name}
+        icon={skill.icon}
+        delay={index * 0.1}
+      />
+                    ))}
+                  </div>
+                </motion.div>
+                <motion.div 
+                  className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
+                  variants={itemVariants}
+                >
                   <h3 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4">Cloud & DevOps</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {cloudDevops.map((skill, index) => (
@@ -237,6 +267,28 @@ const SkillsSection = () => {
                 <h3 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4">Programming Languages</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {programmingLanguages.map((skill, index) => (
+                      <SkillIconCard 
+        key={index}
+        name={skill.name}
+        icon={skill.icon}
+        delay={index * 0.1}
+      />
+                  ))}
+                </div>
+              </motion.div>
+            </TabsContent>
+            
+            <TabsContent value="AI">
+              <motion.div
+                className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h3 className="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4">AI & ML</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                  {aiSkills.map((skill, index) => (
                       <SkillIconCard 
         key={index}
         name={skill.name}

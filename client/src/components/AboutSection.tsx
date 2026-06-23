@@ -18,20 +18,24 @@ const AboutSection = () => {
             >
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                I'm a software engineer with 2+ years of experience building modern web applications. I specialize in Java, Python, Spring Boot, Docker, and React JS development with a focus on creating performant and accessible user experiences.
+
+
+
+I'm a Software engineer passionate about building intelligent products and scalable systems. I’m a Master’s graduate in Software Engineering from Northeastern University.
+I enjoy the mix of building and communicating: writing code, but also working with people to translate messy ideas into something concrete.
+
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-              I'm Passionate about problem-solving and innovation, I thrive in dynamic environments where I can apply my technical skills and analytical thinking. I am continuously seeking opportunities to learn, contribute, and grow in the ever-evolving field of technology.
-            </p>
-              
+Outside of work, I spend time in nature, reset, and occasionally come back with better ideas than I left with.
+              </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <div className="flex items-center text-gray-700 dark:text-gray-300">
                   <i className="ri-map-pin-line text-lg text-primary-600 dark:text-primary-400 mr-2"></i>
-                  <span>Boston, MA</span>
+                  <span>USA</span>
                 </div>
                 <div className="flex items-center text-gray-700 dark:text-gray-300">
                   <i className="ri-mail-line text-lg text-primary-600 dark:text-primary-400 mr-2"></i>
-                  <span>kuthyar.ri@northeastern.edu</span>
+                  <span>rishikabhat.k@gmail.com</span>
                 </div>
               </div>
               

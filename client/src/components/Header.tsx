@@ -93,6 +93,7 @@ const Header = () => {
               </li>
 
 
+              {/* Resume link commented out per request
               <li>
                 <Link 
                   href="/resume" 
@@ -104,6 +105,7 @@ const Header = () => {
                   Resume
                 </Link>
               </li>
+              */}
               {/* <li>
                 <Link 
                   href="/blog" 

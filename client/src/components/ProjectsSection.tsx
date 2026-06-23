@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/lib/data";
 
-type ProjectCategory = "all" | "frontend" | "backend" | "fullstack"| "devops";
+type ProjectCategory = "all" | "frontend" | "backend" | "fullstack"| "devops" | "AI";
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory>("all");
@@ -61,7 +61,9 @@ const ProjectsSection = () => {
       result = result.filter(
         project =>
           project.title.toLowerCase().includes(query) ||
-          project.description.toLowerCase().includes(query) ||
+          (Array.isArray(project.description)
+            ? project.description.join(' ').toLowerCase().includes(query)
+            : project.description.toLowerCase().includes(query)) ||
           project.tags.some(tag => tag.toLowerCase().includes(query))
       );
     }
@@ -148,6 +150,18 @@ const ProjectsSection = () => {
               whileTap={{ scale: 0.95 }}
             >
               frontend
+            </motion.button>
+            <motion.button 
+              onClick={() => handleFilterClick("AI")}
+              className={`px-4 py-2 rounded-full font-medium text-sm transition-all ${
+                activeFilter === "AI" 
+                  ? "bg-primary-600 text-white shadow-md" 
+                  : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
+              }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              AI
             </motion.button>
             <motion.button 
               onClick={() => handleFilterClick("backend")}

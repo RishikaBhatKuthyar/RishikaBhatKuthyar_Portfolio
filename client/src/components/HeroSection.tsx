@@ -27,8 +27,7 @@ const HeroSection = () => {
             Hello, I'm <span className="text-yellow-300 animate-pulse-glow">Rishika Bhat</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in-left">
-        Software Engineer passionate about solving real-time challenges with scalable, AI-driven solutions using Java, Python, Spring Boot, and Docker.
-
+I build software and AI systems, and spend the rest of my time thinking about how to make them simpler.
           </p>
           <div className="flex flex-wrap justify-center gap-4 animate-slide-in-right">
             <Link href="/projects">

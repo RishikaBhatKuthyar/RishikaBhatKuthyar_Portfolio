@@ -82,7 +82,17 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 
       <div className="p-6 flex-grow flex flex-col">
         <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
-        <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow">{description}</p>
+        <div className="mb-4 flex-grow">
+          {Array.isArray(description) ? (
+            <ul className="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
+              {description.map((d, i) => (
+                <li key={i}>{d}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-gray-700 dark:text-gray-300">{description}</p>
+          )}
+        </div>
 
         <div className="flex gap-2 flex-wrap">
           {tags.map((tag, index) => (

@@ -12,11 +12,20 @@ interface Review {
 const reviews: Review[] = [
 {
   id: 1,
+  name: "Malavika Krishnan",
+  position: "Technical Product Manager",
+  company: "State Street",
+  text: "I had the pleasure of managing Rishika during her Co-op as a Technical Business Analyst in our Platform org, and I was impressed by how quickly she adapted and added value to the team. She took ownership of her work, translated requirements into clear insights, and collaborated effectively with different stakeholders. Her curiosity and professionalism stood out, and I have no doubt she will thrive in any future role. I highly recommend her and believe she will be an asset to the team."
+}
+,
+  {
+  id: 2,
   name: "Roopesh Unnamatla",
   position: "Architect",
   company: "Innova Solutions",
   text: "I had the pleasure of managing Rishika Bhat, who stood out for her exceptional teamwork, clear communication, and strong work ethic. She consistently went above and beyond expectations, demonstrating sharp analytical skills and a remarkable ability to understand requirements. For someone at her experience level, her leadership and initiative were truly impressive. I highly recommend Rishika and would gladly work with her again anytime."
 }
+
 ];
 
 const ReviewsSection = () => {

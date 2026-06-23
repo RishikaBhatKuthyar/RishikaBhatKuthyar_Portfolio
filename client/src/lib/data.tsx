@@ -7,7 +7,9 @@ import jobportalimage from "@/assets/jobportalimage.png";
 import gatepassimage from "@/assets/gatepassimage.png";
 import terraformimage from "@/assets/terraformimage.png"; 
 import kafkaimage from "@/assets/kafkaimage.png";
-import portfolioimage from "@/assets/portfolioimage.png"; 
+import portfolioimage from "@/assets/portfolioimage.png";
+import pharmaCardImage from "@/assets/pharma_card.png";
+import financeCardImage from "@/assets/finance_card.png";
 
 import type { 
   Project, 
@@ -22,56 +24,93 @@ export type { Project, Skill, OtherSkill, WorkExperience };
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Pharma Analytics Chatbot",
+    description: [
+      "Built a conversational analytics assistant that translates natural-language questions into data-driven insights over pharma datasets.",
+      "Delivered a responsive tool that helps stakeholders explore regulatory and commercial data faster while reducing manual query overhead."
+    ],
+    image: pharmaCardImage,
+    category: ["fullstack", "AI"],
+    tags: ["Claude API", "FastAPI", "DuckDB", "Redis", "React", "Vite"],
+    reference: "https://github.com/RishikaBhatKuthyar/pharma_analytics_tool"
+  },
+
+  {
+    id: 2,
+    title: "LLM Financial Chatbot with RAG",
+    description: [
+      "Built a financial chatbot that provides grounded, report-driven insights for investment and market analysis.",
+      "Created a platform for users to explore financial documents and receive concise, actionable guidance from structured data."
+    ],
+    image: financeCardImage,
+    category: ["fullstack", "AI"],
+    tags: ["Django", "Gemini", "ChromaDB", "Sentence Transformers", "React", "RAG"],
+    reference: "https://github.com/RishikaBhatKuthyar/George-Soros-chatbot"
+  },
+
+  {
+    id: 3,
     title: "Cloud-Native Microservices with Real-Time Event Processing",
-    description: `• Architected scalable microservices in Java using Spring Boot and Spring Cloud, implementing Eureka for service discovery, Spring Cloud Gateway for centralized routing, enabling seamless workflow management across services
-• Integrated Apache Kafka and RabbitMQ for real-time, event-driven communication between microservices, optimizing message handling and optimizing system latency during peak traffic
-• Deployed containerized microservices with Docker and incorporated Resilience4J patterns (Circuit Breaker, Retry), improving service reliability and fault tolerance`,
+    description: [
+      "Delivered a resilient microservices platform designed for high-throughput event processing and reliable service coordination.",
+      "Built a scalable architecture that improved operational visibility and simplified workflow orchestration across distributed services."
+    ],
     image: microservicesimage,
     category: ["backend"],
     tags: ["Java", "Spring Boot", "Spring Cloud", "Kafka", "RabbitMQ", "Docker", "Resilience4J"],
     reference: "https://github.com/RishikaBhatKuthyar/Springboot_microservices"
   },
   {
-    id: 2,
+    id: 4,
     title: "Book Hub: An Interactive Platform for Readers and Authors",
-    description: `• Collaborated and developed a web platform using Express.js, React, and Node.js to enable real-time content access between readers and authors, enhancing user interaction and platform responsiveness
-• Implemented OAuth2 and JWT-based authentication to secure user sessions and protect API endpoints
-• Integrated Stripe for secure payment processing of 150+ monthly transactions, set up email functionalities for user communication and leveraged Socket.io for real-time notification`,
+    description: [
+      "Created a collaborative publishing platform that connects readers and authors with real-time engagement and content discovery.",
+      "Delivered an intuitive experience for managing author contributions, reader interactions, and transaction workflows."
+    ],
     image: bookhubimage,
     category: ["fullstack","backend", "frontend"],
     tags: ["Express.js", "React", "Node.js", "OAuth2", "JWT", "Stripe", "Socket.io"],
     reference: "https://github.com/RishikaBhatKuthyar/BookHub",
   },
   {
-    id: 3,
+    id: 5,
     title: "Hospitality Industry Management System",
-    description: "A robust system using Java and Swing to streamline hotel operations and enhance customer interactions with an intuitive interface. Manages room reservations, check-ins, and other amenities.",
+    description: [
+      "A robust system using Java and Swing to streamline hotel operations and enhance customer interactions with an intuitive interface.",
+      "Manages room reservations, check-ins, and other amenities."
+    ],
     image: hospitalityindustryimage,
     category: ["backend"],
     tags: ["Java", "Swing"],
     reference: "https://github.com/RishikaBhatKuthyar/hotel_management_system"
   },
   {
-    id: 4,
+    id: 6,
     title: "Plan Service API",
-    description: `A RESTful API for managing structured JSON data with support for CRUD operations, schema validation, conditional reads/writes, Elasticsearch indexing (parent-child model), and secure access via RS256-signed Bearer tokens from Google Identity Provider (IdP).`,
+    description: [
+      "A RESTful API for managing structured JSON data with support for CRUD operations, schema validation, conditional reads/writes.",
+      "Includes Elasticsearch indexing (parent-child model) and secure access via RS256-signed Bearer tokens from Google Identity Provider (IdP)."
+    ],
     image: planindeximage,
     category: ["backend"],
     tags: [
-      "Java", 
-      "Spring Boot", 
-      "Redis", 
-      "Elasticsearch", 
-      "RabbitMQ", 
-      "Google OAuth2", 
+      "Java",
+      "Spring Boot",
+      "Redis",
+      "Elasticsearch",
+      "RabbitMQ",
+      "Google OAuth2",
       "REST API"
     ],
     reference: "https://github.com/RishikaBhatKuthyar/PlanIndexAPI"
   },
-   {
-    id: 5,
-    title: "Job Portal",
-    description: `React Job Portal is a web application designed to bridge the gap between job seekers and employers. Leveraging React for the frontend, Material UI for design, Axios for API requests, and a Node.js backend, this portal offers an intuitive interface for users to explore job listings and company profiles efficiently.`,
+  {
+   id: 7,
+   title: "Job Portal",
+    description: [
+      "React Job Portal is a web application designed to bridge the gap between job seekers and employers.",
+      "Leverages React, Material UI, Axios, and a Node.js backend to provide an intuitive interface for exploring job listings and company profiles."
+    ],
     image: jobportalimage,
     category: ["fullstack","backend", "frontend"],  
     tags: [
@@ -79,10 +118,13 @@ export const projects: Project[] = [
     ],
     reference: "https://github.com/RishikaBhatKuthyar/JobPortal"
   },
-   {
-    id: 6,
-    title: "Advanced Security System using Face Detection",
-    description: `Utilizing advanced facial recognition technology, the system enhances security and efficiency by enabling seamless management of student and guest entry and exit records. This solution replaces traditional paper-based logbooks, offering a user-friendly and secure way to handle gate passes through mobile and web platforms.`,
+  {
+   id: 8,
+   title: "Advanced Security System using Face Detection",
+    description: [
+      "Utilizing advanced facial recognition technology to enhance security and efficiency for student and guest entry/exit records.",
+      "Replaces paper-based logbooks with a user-friendly mobile and web solution for gate pass management."
+    ],
     image: gatepassimage,
     category: ["fullstack","backend","frontend"],
     tags: [
@@ -91,9 +133,12 @@ export const projects: Project[] = [
     reference: "https://ijsrset.com/home/issue/view/article.php?id=IJSRSET2293164"
   },
   {
-    id: 7,
+    id: 9,
     title: "Terraform Infrastructure Automation",
-    description: `Automated the setup of VPCs, subnets, and cloud resources using Terraform, with a focus on creating reusable modules and managing resource dependencies.`,
+    description: [
+      "Automated the setup of VPCs, subnets, and cloud resources using Terraform.",
+      "Focused on creating reusable modules and managing resource dependencies for repeatable infrastructure provisioning."
+    ],
     image: terraformimage,
     category: ["devops"],
     tags: [
@@ -102,9 +147,12 @@ export const projects: Project[] = [
     reference: "https://github.com/RishikaBhatKuthyar/terraform-aws-rishika-test-vpc"
   },
   {
-  id: 8,
+  id: 10,
   title: "Kafka Implementation",
-  description: 'This project streams real-time Wikimedia changes from the Wikimedia Event Stream using Kafka. The data is then consumed and stored in a MySQL database. It demonstrates the use of Kafka producers and consumers to handle JSON and String messages efficiently.',
+  description: [
+    'Streams real-time Wikimedia changes from the Wikimedia Event Stream using Kafka, consuming and storing data in MySQL.',
+    'Demonstrates Kafka producers and consumers handling JSON and String messages efficiently.'
+  ],
   image: kafkaimage,
   category: ["backend", "devops"],
   tags: [
@@ -113,9 +161,12 @@ export const projects: Project[] = [
   reference: "https://github.com/RishikaBhatKuthyar/realtime-wikimedia-data-processing-kafka"
 },
 {
-  id: 9,
+  id: 11,
   title: "My Portfolio Website",
-  description: `A full-stack web application built with a modern development stack to showcase technical expertise, professional projects, and software engineering skills. It leverages a modular and scalable architecture optimized for performance, rapid development, and clean code practices. The frontend is powered by React and Tailwind CSS using Vite for lightning-fast builds, while the backend uses Express.js with TypeScript to handle API requests and server-side logic.`,
+  description: [
+    "A full-stack web application built with a modern development stack to showcase technical expertise and projects.",
+    "Uses React, Tailwind CSS, and Vite on the frontend and an Express + TypeScript backend for API handling and server logic."
+  ],
   image: portfolioimage,
   category: ["fullstack", "frontend", "backend"],
   tags: [
@@ -130,26 +181,35 @@ export const projects: Project[] = [
 
 export const workExperience: WorkExperience[] = [
   {
-    title: "Technical Business Analyst Coop",
+    title: "Technical Analyst Coop",
     company: "State Street | Boston, USA",
-    period: "Jan 2025 – Present",
-    description:
-      "Designed event-driven workflows in Java and automated B2B integrations, reducing manual effort and bottlenecks. Drove containerization with Docker and Kubernetes, improving deployment efficiency.",
+    period: "Jan 2025 –  Aug 2025",
+      description: [
+        "Led system design and delivery of workflow automation features for the Charles River IMS Workflow Rule Engine, shipping enhancements in the 25R3 release for trading and compliance processes used by 200+ front-office users.",
+        "Collaborated with 6+ stakeholders across engineering, product, and business teams to scope workflow rule enhancements and translate complex trading/compliance requirements into scalable technical solutions.",
+        "Developed a RAG-based AI assistant using embeddings, vector search, and LLM APIs to surface internal documentation, reducing support requests by 25% and accelerating knowledge discovery.",
+        "Containerized backend services with Docker and deployed to Kubernetes using health checks and rolling updates, reducing environment setup time from ~1 day to under 1 hour."
+      ],
   },
   {
     title: "Associate Software Engineer",
     company: "Innova Solutions | Hyderabad, India",
     period: "June 2022 – Dec 2023",
-    description:
-      "Developed secure Spring Boot APIs and optimized Azure infrastructure with AKS and CI/CD. Enhanced system reliability and performance for 30K+ users through Kafka and Redis solutions.",
+      description: [
+        "Engineered a Java Spring Boot application with RESTful APIs, JWT authentication, and role-based access control to manage 30K+ employee records, improving security and data handling.",
+        "Designed event-driven microservices using Apache Kafka for asynchronous processing, reducing p95 latency by ~30%.",
+        "Improved service resilience by building a lightweight API rate limiter with Spring AOP and Redis to mitigate overload during peak usage.",
+        "Migrated services to Azure Kubernetes Service (AKS) with automated CI/CD pipelines, enabling zero-downtime rolling deployments and improving release reliability."
+      ],
   },
   {
     title: "Software Developer Intern",
     company: "Techimax | Hyderabad, India",
     period: "Jan 2020 – June 2020",
-    description:
-      "Built a real-time patient dashboard with React and Node.js, improving system responsiveness. Strengthened data security and automated testing, boosting code quality and reliability.",
-  },
+      description: [
+        "Developed a full-stack healthcare dashboard using React, Node.js, and MySQL to visualize and manage patient records, improving data accessibility and UX.",
+        "Implemented and tested REST APIs using Java, JUnit, Mockito, and Postman, improving backend reliability and reducing regression defects."
+      ]  },
 ];
 
 
@@ -211,17 +271,20 @@ export const educationTimeline: Education[] = [
     institution: "Northeastern University",
     logo: neuLogo,
     degree: "Master of Science (MS), Information Systems",
-    period: "Jan 2024 – Present",
+    period: "Jan 2024 – May 2026",
     courses: [
       "INFO5001 Application Engineering Development",
       "INFO6150 Web Design and User Experience",
-      "INFO6205 Program Structure & Algorithms",
-      "CSYE6200 Concepts of Object-Oriented Design",
-      "INFO7255 Advanced Big-Data Application Indexing"
+      "INFO 6205 Program Structure & Algorithms",
+      "CSYE 6200 Concepts of Object-Oriented Design",
+      "INFO 7255 Advanced Big-Data Application Indexing",
+      "INFO 7375 User Experience in Era of Generative AI",
+      "CSYE 7380 Theory and Practical Applications of Generative AI",
+      "INFO 7260 Business Process Engineering"
     ],
-    skills: [
-      "Web Development", "Java", "JavaScript", "Java Swing", "Data Structures and Algorithms"
-    ]
+    // skills: [
+    //   "Generative AI","Web Development", "Java", "Spring Framework", "Data Structures and Algorithms"
+    // ]
   },
   {
     institution: "Jawaharlal Nehru Technological University",
@@ -237,9 +300,9 @@ export const educationTimeline: Education[] = [
       "Design and Analysis of Algorithms",
       "Cloud Computing"
     ],
-    skills: [
-      "Java", "Python (Programming Language)"
-    ]
+    // skills: [
+    //   "Java", "Python (Programming Language)"
+    // ]
   },
   {
     institution: "Narayana Junior College - India",

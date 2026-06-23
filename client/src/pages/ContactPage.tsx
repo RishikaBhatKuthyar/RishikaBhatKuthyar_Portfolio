@@ -67,7 +67,7 @@ const ContactPage = () => {
                       </div>
                       <div>
                         <div className="text-white/70 text-sm mb-1">Location</div>
-                        <div className="text-white">Boston, Massachusetts, USA</div>
+                        <div className="text-white">USA</div>
                       </div>
                     </div>
                   </div>
